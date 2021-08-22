@@ -62,6 +62,7 @@ const Sidebar = ({ filterNames, filterFunction, resetFilterFunction }) => {
 
   const resetFilterHandler = () => {
     setActiveFilter(false);
+    setFormData(filterNames.reduce((acc, key) => ({ ...acc, [key]: '' }), {}));
     dispatch(resetFilterFunction());
   };
 
